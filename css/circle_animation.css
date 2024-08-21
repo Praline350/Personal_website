@@ -1,0 +1,49 @@
+
+.page-circleBehind:before, .page-circleBehind:after {
+    position: absolute;
+    top: 80%;
+    left: 29%;
+    width: 22em;
+    height: 22em;
+    border: 3px solid rgb(203, 146, 224);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.page-circleBehind:after {
+    border-width: 1px;
+}
+
+.page-circleBehind:before {
+    animation: pulse 1.8s forwards;
+}
+
+.page-circleBehind:after {
+    animation: pulse2 2.5s forwards;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+}

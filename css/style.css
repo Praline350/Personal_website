@@ -1,0 +1,86 @@
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+}
+
+
+/* Header & Nav bar */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header a{
+    color: grey;
+    text-decoration: none;
+}
+
+
+.nav-bar {
+    font-family: "Merriweather", serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-bar-left {
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin: 30px;
+    margin-left: 50px;
+    gap: 50px;
+}
+
+.nav-bar-right {
+    display: flex;
+    gap: 30px;
+    margin: 25px;
+    margin-right: 50px;
+}
+
+.nav-home {
+    font-weight: 500;
+    color: black;
+}
+
+.logo {
+    width: auto;
+    height: 40px;
+}
+
+/* Content Presentation */
+
+.left-page{
+    margin: 20px;
+    margin-left: 50px;
+}
+.presentation-container{
+    position: relative;
+    margin-top: 70px;
+    margin-left: 100px;
+
+}
+.presentation-name{
+    font-size: 2.9em;
+}
+
+.presentation-subtitle {
+    position: absolute;
+    top: 60px;
+    right: 115px;
+}
+
+.presentation-content p {
+    padding-left: 60px;
+}
