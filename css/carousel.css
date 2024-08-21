@@ -6,7 +6,7 @@
 .carousel-container {
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
     width: 100%;
     height: 400px; /* Hauteur de la section, ajustez selon vos besoins */
@@ -19,15 +19,20 @@
     border-radius: 10px;
     height: 100%;
     width: 25%; /* Taille réduite par défaut */
-    transition: width 0.5s ease;
+    transition: width 0.5s ease, transform 0.3s ease;
     cursor: pointer;
     overflow: hidden; /* Cacher les débordements de l'image */
     position: relative;
-    opacity: 0.1; /* Initialement invisibles */
+    opacity: 0; /* Initialement invisibles */
     transform: translateY(20px); /* Légère translation pour l'effet */
     transition: opacity 1s ease, transform 1s ease, width 0.5s ease;
+    box-sizing: border-box;
     
 
+}
+
+.box-carrousel:hover img {
+    transform: scale(1.06); /* Zoom sur l'image au survol */
 }
 
 .box-carrousel.active {
@@ -39,7 +44,7 @@
     width: 100%; /* L'image prend toute la largeur du conteneur */
     height: 100%; /* L'image prend toute la hauteur du conteneur */
     object-fit: cover; /* L'image est recadrée pour couvrir le conteneur */
-    transition: width 0.5s ease, height 0.5s ease; /* Transition douce */
+    transition: width 0.5s ease, height 0.5s ease, transform 0.3s ease; /* Transition douce */
 }
 
 .box-carrousel:not(.active) img {
@@ -75,6 +80,10 @@
 
 .overlay-text a::after {
     background-color: white;
+}
+
+.overlay-text a{
+    text-shadow: black 2px 0 10px;
 }
 
 .box-carrousel.active .overlay-text {
