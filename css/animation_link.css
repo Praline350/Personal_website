@@ -77,9 +77,8 @@
     transition: all 0.3s ease-in-out;
 }
 
-
-
 .fancy-link:hover::after {
     visibility: visible;
     transform: scaleX(1);
 }
+

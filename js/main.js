@@ -20,25 +20,28 @@ document.querySelectorAll('.container div').forEach(item => {
     });
 });
 
-
-const images = document.querySelectorAll('.carousel-image');
-let currentIndex = 0;
-
-document.getElementById('next').addEventListener('click', () => {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
-    updateCarousel();
+document.querySelectorAll('.box-carrousel').forEach(box => {
+    box.addEventListener('click', () => {
+        // Retirer la classe active de la div actuellement active
+        document.querySelector('.box-carrousel.active').classList.remove('active');
+        
+        // Ajouter la classe active à la div cliquée
+        box.classList.add('active');
+    });
 });
 
-document.getElementById('prev').addEventListener('click', () => {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    images[currentIndex].classList.add('active');
-    updateCarousel();
-});
+window.addEventListener('load', () => {
+    const carouselContainer = document.querySelector('.carousel-container');
+    const boxes = document.querySelectorAll('.box-carrousel');
 
-function updateCarousel() {
-    const offset = -currentIndex * (100 / images.length);
-    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
-}
+    // Rendre le conteneur visible après le chargement de la page
+    carouselContainer.style.opacity = '1';
+
+    // Transition pour chaque box
+    boxes.forEach((box, index) => {
+        setTimeout(() => {
+            box.style.opacity = '1';
+            box.style.transform = 'translateY(0)';
+        }, index * 200); // Décalage de 200ms entre les box
+    });
+});
