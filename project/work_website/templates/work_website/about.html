@@ -1,0 +1,64 @@
+{% extends 'work_website/base.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="about-main-content">
+        <section class="about-page-left">
+            <div class="skill-container">
+                <span class="skill-name"><img src="{% static 'images/python.png' %}"></span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-skill-level="9"></div>
+                </div>
+            </div>
+            <div class="skill-container">
+                <span class="skill-name "><img src="{% static 'images/django.png' %}"> </span>
+                <div class="skill-bar django">
+                    <div class="skill-level" data-skill-level="9"></div>
+                </div>
+            </div>
+            <div class="skill-container">
+                <span class="skill-name"><img src="{% static 'images/js.png' %}"></span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-skill-level="6"></div>
+                </div>
+            </div>
+            <div class="skill-container">
+                <span class="skill-name"><img src="{% static 'images/html.png' %}"><img src="{% static 'images/css.png' %}"></span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-skill-level="7"></div>
+                </div>
+            </div>
+            <div class="diplome-container">
+                <span class="diplome"><img src="{% static 'images/diplome.png' %}" class="diplome"></span>
+                <div class="diplome-info">
+                    <h3>Développeur d'application Python</h2>
+                    <h4>Parcours <a href="https://openclassrooms.com/fr/paths/879-developpeur-dapplication-python">OpenClassroom</a></h3>
+                    <span>Niveau 6 (Bac +3)</span>
+                </div>
+            </div>
+
+        </section>
+        <section class="about-page-right page-animation-container">
+            <div class="about-description page-circleBehind container">
+                <h1 class="about-title">À propos</h1>
+                <p class="about-description">Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Distinctio rerum harum odit 
+                    doloribus aliquam praesentium, nulla voluptate quibusdam, 
+                    vitae numquam enim obcaecati! Neque ipsam asperiores qui necessitatibus adipisci 
+                    reprehenderit magnam.
+                    Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit.</p>
+                <p class="about-description">Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Distinctio rerum harum odit 
+                    doloribus aliquam praesentium, nulla voluptate quibusdam, 
+                    vitae numquam enim obcaecati! Neque ipsam asperiores qui necessitatibus adipisci 
+                    reprehenderit magnam.
+                    Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit.</p>
+            </div>
+        </section>
+
+    </main>
+
+<script src="{% static 'js/about.js' %}" defer></script>
+{% endblock content%}

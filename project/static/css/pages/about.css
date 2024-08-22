@@ -1,0 +1,125 @@
+/* About page */
+
+.about-main-content {
+    display: grid;
+    grid-template-columns: 1.1fr 1.5fr;
+    grid-template-rows: auto;
+    margin-top: 20px;
+}
+
+/* A propos */
+
+.about-page-right {
+    grid-column: 2;
+    display: flex;
+    margin-right: 100px;
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.about-title {
+    font-size: 2em;
+}
+
+.about-description {
+    grid-column: 2;
+    padding-left: 40px;
+    text-shadow: 1px 1px 2px white;
+    
+}
+
+/* Skill et diplome */
+
+.about-page-left {
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+
+.skill-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.skill-name {
+    width: 100px;
+    font-weight: bold;
+    justify-content: right;
+}
+
+.skill-bar {
+    position: relative;
+    width: 300px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 11px 10px 20px -7px rgba(128,128,128,1);
+    -moz-box-shadow: 11px 10px 20px -7px rgba(128,128,128,1);
+    box-shadow: 11px 10px 20px -7px rgba(128,128,128,1);
+}
+
+.skill-level {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: rgb(48, 199, 202);
+    border-radius: 10px;
+
+}
+
+.skill-value {
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.skill-name img {
+    width: auto;
+    height: 40px;
+    padding-right: 10px;
+}
+
+.django {
+    margin-left: 10px;
+}
+
+.diplome-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-top: 80px;
+    align-items: center;
+
+}
+
+.diplome {
+    width: auto;
+    height: 80px;
+}
+
+.diplome-info {
+    margin: 0;
+    padding: 0;
+}
+
+.diplome-info h3, .diplome-info h4,
+.diplome span
+{
+    margin: 0;
+    padding: 0;
+}
+
+.diplome-info a:visited {
+    color : rgb(38, 155, 157);
+}
+
+.diplome-info a {
+    transition: font-size 0.7s ease;
+}
+
+.diplome-info a:hover {
+    font-size: large;
+}

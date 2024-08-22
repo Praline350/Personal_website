@@ -1,3 +1,5 @@
+// Animation de fuite des élements de présentation (name, ...)
+
 document.querySelectorAll('.container div').forEach(item => {
     item.addEventListener('mousemove', (e) => {
         const rect = item.getBoundingClientRect();
@@ -20,6 +22,10 @@ document.querySelectorAll('.container div').forEach(item => {
     });
 });
 
+
+// Animation d'activation des box du carousel 
+
+
 document.querySelectorAll('.box-carrousel').forEach(box => {
     box.addEventListener('click', () => {
         // Retirer la classe active de la div actuellement active
@@ -30,18 +36,23 @@ document.querySelectorAll('.box-carrousel').forEach(box => {
     });
 });
 
+// Animation arrivé carousel au chargement de la page
+
 window.addEventListener('load', () => {
     const carouselContainer = document.querySelector('.carousel-container');
     const boxes = document.querySelectorAll('.box-carrousel');
 
-    // Rendre le conteneur visible après le chargement de la page
-    carouselContainer.style.opacity = '1';
+    // Ajouter un délai de 1 seconde avant de commencer l'animation
+    setTimeout(() => {
+        // Rendre le conteneur visible après le délai
+        carouselContainer.style.opacity = '1';
 
-    // Transition pour chaque box
-    boxes.forEach((box, index) => {
-        setTimeout(() => {
-            box.style.opacity = '1';
-            box.style.transform = 'translateY(0)';
-        }, index * 200); // Décalage de 200ms entre les box
-    });
+        // Transition pour chaque box
+        boxes.forEach((box, index) => {
+            setTimeout(() => {
+                box.style.opacity = '1';
+                box.style.transform = 'translateY(0)';
+            }, index * 300); // Décalage de 200ms entre les box
+        });
+    }, 600); // Délai de 1 seconde (1000 ms)
 });

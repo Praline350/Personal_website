@@ -4,13 +4,6 @@ body{
     margin: 0;
 }
 
-.main-content{
-    display: grid;
-    grid-template-columns: 0.9fr 1fr;
-    margin-top: 40px ;
-}
-
-
 /* Header & Nav bar */
 
 header{
@@ -60,28 +53,5 @@ header a{
     height: 40px;
 }
 
-/* Content Presentation */
 
-.left-page{
-    margin: 20px;
-    margin-left: 50px;
-}
-.presentation-container{
-    position: relative;
-    margin-top: 70px;
-    margin-left: 100px;
 
-}
-.presentation-name{
-    font-size: 2.9em;
-}
-
-.presentation-subtitle {
-    position: absolute;
-    top: 60px;
-    right: 115px;
-}
-
-.presentation-content p {
-    padding-left: 60px;
-}

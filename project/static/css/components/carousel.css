@@ -4,6 +4,8 @@
 }
 
 .carousel-container {
+    padding: 20px;
+    padding-top: 0px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -17,14 +19,17 @@
 .box-carrousel {
     background-color: #e0e0e0; /* Couleur de fond pour visualiser les divs */
     border-radius: 10px;
-    height: 100%;
+    -webkit-box-shadow: 10px 15px 33px -16px black;
+    -moz-box-shadow: 10px 15px 33px -16px black;
+    box-shadow: 10px 15px 33px -16px black;
+    height: 90%;
     width: 25%; /* Taille réduite par défaut */
     transition: width 0.5s ease, transform 0.3s ease;
     cursor: pointer;
     overflow: hidden; /* Cacher les débordements de l'image */
     position: relative;
     opacity: 0; /* Initialement invisibles */
-    transform: translateY(20px); /* Légère translation pour l'effet */
+    transform: translateY(40px); /* Légère translation pour l'effet */
     transition: opacity 1s ease, transform 1s ease, width 0.5s ease;
     box-sizing: border-box;
     
