@@ -1,0 +1,57 @@
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Header & Nav bar */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header a{
+    color: grey;
+    text-decoration: none;
+}
+
+
+.nav-bar {
+    font-family: "Merriweather", serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-bar-left {
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin: 30px;
+    margin-left: 50px;
+    gap: 50px;
+}
+
+.nav-bar-right {
+    display: flex;
+    gap: 30px;
+    margin: 25px;
+    margin-right: 50px;
+}
+
+.nav-home {
+    font-weight: 500;
+    color: black;
+}
+
+.logo {
+    width: auto;
+    height: 40px;
+}
+
+
+

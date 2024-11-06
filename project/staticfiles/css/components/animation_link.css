@@ -1,0 +1,84 @@
+/* Animation cercle nav bar right */
+
+.animation-link
+{
+    margin: 0 auto;
+	text-align: center;
+}
+
+.animation-link a
+{
+    color: #FFF4ec;
+    text-decoration: none;
+    font: 20px ;
+    margin: 0px 10px;
+    padding: 3px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.circleBehind a:before, .circleBehind a:after
+{
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid black;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.circleBehind a:after
+{
+    border-width: 1px;
+    transition: all 0.4s;
+}
+
+.circleBehind a:hover:before
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.circleBehind a:hover:after
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+
+/* Soulignement animé Nav bar Left*/
+
+.fancy-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+
+.fancy-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.fancy-link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+

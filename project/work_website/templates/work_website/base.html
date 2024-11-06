@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="{% static 'js/main.js' %}" defer></script>
     
-
     <title>Edwin Thierry</title>
 </head>
 <body>
@@ -22,10 +21,11 @@
                 <a href="{% url 'index' %}" class="nav-home fancy-link">Home</a>
                 <a href="{% url 'about' %}" class="fancy-link">About</a>
                 <a href="{% url 'contact' %}" class="fancy-link">Contact</a>
-            </div>
+
+            </div> 
                 <div class="nav-bar-right container-link animation-link circleBehind">
-                <a href="https://github.com/Thierry-Edwin/Openclassroom_Projects_Portfolio" ><img class="logo" src="{% static 'images/github.png' %}"></a>
-                <a href="https://www.linkedin.com/in/edwin-thierry-28a047310/"><img class="logo" src="{% static 'images/linkeded.png' %}"></a>
+                <a href="https://github.com/Thierry-Edwin/Openclassroom_Projects_Portfolio" target="_blank" ><img class="logo" src="{% static 'images/github.png' %}"></a>
+                <a href="https://www.linkedin.com/in/edwin-thierry-28a047310/" target="_blank"><img class="logo" src="{% static 'images/linkeded.png' %}"></a>
             </div>
         </nav>
     </header>

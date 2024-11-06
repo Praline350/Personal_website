@@ -6,7 +6,7 @@
             <div class="contact page-circleBehind">
                 <h2>Contactez moi...</h2>
                 <div class="contact-content">
-                    <img src="{% static 'images/email.png' %}"><a href="mailto:edwinthierry17@gmail.com">edwinthierry17@gmail.com</a>  
+                    <img src="{% static 'images/email.png' %}"><a class="email-cursor" id="email-text" title="Copy email">edwinthierry17@gmail.com</a>  
                 </div>
                 <div class="contact-content">
                     <img src="{% static 'images/telephone.png' %}"><span>06.81.40.13.17</span>    
@@ -21,8 +21,8 @@
             <form class="contact-form" action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="title">Titre :</label>
-                    <input type="text" id="title" name="title" placeholder="Entrez le titre" required value="{{ form.title.value|default:'' }}">
+                    <label for="title">Objet :</label>
+                    <input type="text" id="title" name="title" placeholder="Entrez l'objet du message" required value="{{ form.title.value|default:'' }}">
                     <!-- Ceci rend le champ "title" du formulaire Django -->
                     {% if form.title.errors %}
                         <div class="error">{{ form.title.errors }}</div>
@@ -57,4 +57,5 @@
     </main>
 
 <script src="{% static 'js/contact.js' %}" defer></script>
+<script src="{% static 'js/copyEmail.js' %}" defer></script>
 {% endblock content %}

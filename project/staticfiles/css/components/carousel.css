@@ -1,0 +1,105 @@
+.carousel-section {
+    margin: 40px;
+    margin-top: 70px;
+}
+
+.carousel-container {
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 400px; /* Hauteur de la section, ajustez selon vos besoins */
+    overflow: hidden;
+
+}
+
+.box-carrousel {
+    background-color: #e0e0e0; /* Couleur de fond pour visualiser les divs */
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 15px 33px -16px black;
+    -moz-box-shadow: 10px 15px 33px -16px black;
+    box-shadow: 10px 15px 33px -16px black;
+    height: 90%;
+    width: 25%; /* Taille réduite par défaut */
+    transition: width 0.5s ease, transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden; /* Cacher les débordements de l'image */
+    position: relative;
+    opacity: 0; /* Initialement invisibles */
+    transform: translateY(40px); /* Légère translation pour l'effet */
+    transition: opacity 1s ease, transform 1s ease, width 0.5s ease;
+    box-sizing: border-box;
+    
+
+}
+
+.box-carrousel:hover img {
+    transform: scale(1.06); /* Zoom sur l'image au survol */
+}
+
+.box-carrousel.active {
+    width: 60%; /* Taille de la div active */
+
+}
+
+.box-carrousel img {
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: 100%; /* L'image prend toute la hauteur du conteneur */
+    object-fit: cover; /* L'image est recadrée pour couvrir le conteneur */
+    transition: width 0.5s ease, height 0.5s ease, transform 0.3s ease; /* Transition douce */
+}
+
+.box-carrousel:not(.active) img {
+    width: 100%; /* Garde les proportions de l'image */
+    height: 100%; /* Couvre la hauteur de la div */
+    object-fit: cover; /* Recadre l'image pour qu'elle couvre le conteneur */
+}
+
+.box-carrousel .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay sombre */
+    color: white;
+    font-size: 24px;
+    opacity: 0; /* Par défaut, le texte est invisible */
+    transition: opacity 0.5s ease; /* Transition douce pour l'affichage du texte */
+    pointer-events: none; /* Désactive les interactions sur l'overlay par défaut */
+}
+
+
+.overlay-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.overlay-text a::after {
+    background-color: white;
+}
+
+.overlay-text a{
+    text-shadow: black 2px 0 10px;
+}
+
+.box-carrousel.active .overlay-text {
+    opacity: 1; /* Le texte devient visible quand la box est active */
+    pointer-events: auto; /* Active les interactions lorsque la box est active */
+}
+
+.overlay-text a:link,
+.overlay-text a:visited,
+.overlay-text a:hover,
+.overlay-text a:active {
+    color: white; /* Force la couleur blanche pour tous les états du lien */
+    text-decoration: none; /* Supprime le soulignement même au survol */
+}
