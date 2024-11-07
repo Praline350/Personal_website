@@ -1,0 +1,52 @@
+.project-carousel-section {
+    margin-right: 40px;
+    position: relative;
+    width: 98%;
+
+}
+
+.project-carrousel-box {
+    position: absolute;
+    border-radius: 10px;
+    width: 98%;
+    height: 98%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.project-carrousel-box.active {
+    border: 1px solid gray;
+    box-shadow: 10px 12px 28px -16px black;
+    opacity: 1;
+}
+
+.project-carrousel-box img {
+    border-radius: 10px;
+    width: 100%;    /* Adapte l'image à la largeur de la boîte */
+    height: 100%;   /* Conserve les proportions */
+    display: block;
+    object-fit: cover; /* Optionnel : adapte l’image à la boîte sans déformation */
+}
+
+.project-carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.project-carousel-button.prev {
+    left: 0px;
+}
+
+.project-carousel-button.next {
+    right: 14px;
+}

@@ -4,6 +4,7 @@
 @import url('components/circle_animation.css');
 @import url('components/ripple.css');
 @import url('components/carousel.css');
+@import url('components/project_carrousel.css');
 @import url('components/modal.css');
 
 /* Pages */
@@ -12,3 +13,4 @@
 @import url('pages/index.css');
 @import url('pages/about.css');
 @import url('pages/contact.css');
+@import url('pages/projects.css');

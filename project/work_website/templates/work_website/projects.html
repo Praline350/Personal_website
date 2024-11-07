@@ -1,0 +1,51 @@
+{% extends 'work_website/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="project-main-content">
+{% for project in projects %}
+    <section class="project-section">
+        <div class="project-info">
+            <div>
+                <h1>{{project.title}}</h1>
+                <h2>{{project.subtitle}}</h2>
+                <span>{{project.status}} Project</span>
+                <div>
+                    <!-- Petit point de statut -->
+                    {% if project.status == 'Deployed' %}
+                        <div class="status-indicator deployed"></div><span>Online</span>
+                    {% else %}
+                        <div class="status-indicator not-deployed"></div><span>Offline</span>
+                    {% endif %}
+                </div>
+            </div>
+            <p>{{project.description}}</p>
+            <span>{{project.creation_date|date:"Y-m-d"}}</span>
+            <div class="project-link">
+            {% if project.web_link %}
+            <a href="{{project.web_link}}" target="_blank"><strong class="fancy-link">Lien vers le site Web</strong></a> 
+            {% endif %}
+            <a  href=" {{project.github_link}}" target="_blank"><strong class="fancy-link">Lien vers le repository GitHub</strong></a>
+            </div>
+            <button class="project-detail-btn">Voir le detail du projet</button>
+        </div>
+        <div id="carousel-{{ forloop.counter }}" class="project-carousel-section ">
+            {% for screenshot in project.screenshot.all %}
+                <div class="project-carrousel-box {% if forloop.first %}active{% endif %}">
+                    <img src="{{screenshot.image.url }}">
+                </div>
+            {% endfor %}
+            <button class="project-carousel-button prev" onclick="prevImage({{ forloop.counter }})">&#10094;</button>
+            <button class="project-carousel-button next" onclick="nextImage({{ forloop.counter }})">&#10095;</button>
+        </div>
+
+    </section>
+{% endfor %}
+
+
+
+
+
+</main>
+{% endblock content %}

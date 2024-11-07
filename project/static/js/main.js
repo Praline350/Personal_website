@@ -56,3 +56,44 @@ window.addEventListener('load', () => {
         });
     }, 600); // Délai de 1 seconde (1000 ms)
 });
+
+
+
+// Carroussel des projets
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Objets pour stocker l'index de chaque carrousel
+    const carousels = document.querySelectorAll('.project-carousel-section');
+    let carouselIndices = {}; // Stocke l’index courant de chaque carrousel
+
+    carousels.forEach((carousel, index) => {
+        carouselIndices[index + 1] = 0; // Initialise chaque carrousel à l’image 0
+    });
+
+    // Affiche l'image pour un carrousel spécifique
+    function showImage(carouselId, index) {
+        const slides = document.querySelectorAll(`#carousel-${carouselId} .project-carrousel-box`);
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    // Image suivante
+    window.nextImage = function(carouselId) {
+        const slides = document.querySelectorAll(`#carousel-${carouselId} .project-carrousel-box`);
+        carouselIndices[carouselId] = (carouselIndices[carouselId] + 1) % slides.length;
+        showImage(carouselId, carouselIndices[carouselId]);
+    }
+
+    // Image précédente
+    window.prevImage = function(carouselId) {
+        const slides = document.querySelectorAll(`#carousel-${carouselId} .project-carrousel-box`);
+        carouselIndices[carouselId] = (carouselIndices[carouselId] - 1 + slides.length) % slides.length;
+        showImage(carouselId, carouselIndices[carouselId]);
+    }
+
+    // Initialiser chaque carrousel à la première image
+    Object.keys(carouselIndices).forEach(carouselId => {
+        showImage(carouselId, carouselIndices[carouselId]);
+    });
+});

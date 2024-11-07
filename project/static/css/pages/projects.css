@@ -1,0 +1,76 @@
+/* Projects Page */
+
+.project-main-content {
+    display : flex;
+    flex-direction: column;
+    margin-top: 40px ;
+    margin-left: 40px;
+}
+
+.project-section {
+    display : grid;
+    grid-template-columns: 2.5fr 3fr;
+    margin-bottom: 70px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.project-info h1{
+    font-size: 2.5em;
+    margin: 0px;
+}
+
+.project-info h2 {
+    font-size: 1.2em;
+    margin: 0px;
+}
+
+.project-link {
+    display: flex;
+    flex-direction: column ;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.project-detail-btn {
+    border-radius: 10px;
+    border: 1px solid rgb(203, 146, 224);
+    box-shadow: 4px 4px 10px -5px black;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-detail-btn:hover {
+    transform: scale(1.1); /* Agrandit le bouton de 10% */
+}
+
+
+/* Status indicator pour les appli deployé */
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Pour créer un cercle */
+    display: inline-block;
+    transition: all 0.3s ease; /* Pour des transitions fluides */
+    margin-right: 6px;
+}
+
+.deployed {
+    background-color: green; /* Couleur verte pour déployé */
+    filter: blur(2px); /* Effet de flou */
+}
+
+.not-deployed {
+    background-color: red; /* Couleur rouge pour non déployé */
+    filter: none; /* Pas de flou pour non déployé */
+}
