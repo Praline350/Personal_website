@@ -1,2 +1,4 @@
 statifiles/
 media/
+.env
+env/
