@@ -28,7 +28,9 @@
             {% endif %}
             <a  href=" {{project.github_link}}" target="_blank"><strong class="fancy-link">Lien vers le repository GitHub</strong></a>
             </div>
-            <button class="project-detail-btn">Voir le detail du projet</button>
+
+            <!-- TODO : FAIRE LA MODALE !!! -->
+            <!-- <button class="project-detail-btn">Voir le detail du projet</button> -->
         </div>
         <div id="carousel-{{ forloop.counter }}" class="project-carousel-section ">
             {% for screenshot in project.screenshot.all %}
