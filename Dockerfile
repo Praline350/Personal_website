@@ -24,5 +24,9 @@ RUN python manage.py migrate
 # Collectez les fichiers statiques
 RUN python manage.py collectstatic --noinput
 
+# Utilisation de la variable SECRET_KEY depuis l'environnement
+ARG DJANGO_SECRET_KEY
+ENV DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+
 # Commande de lancement
 CMD ["gunicorn", "project.wsgi:application", "--bind", "0.0.0.0:8000"]
