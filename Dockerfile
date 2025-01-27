@@ -15,6 +15,9 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# Changer le répertoire de travail vers le projet Django
+WORKDIR /app/project
+
 # migration db
 RUN python manage.py migrate
 
@@ -22,4 +25,4 @@ RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
 
 # Commande de lancement
-CMD ["gunicorn", "project.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+CMD ["gunicorn", "project.wsgi:application", "--bind", "0.0.0.0:8000"]
