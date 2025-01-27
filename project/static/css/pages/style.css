@@ -3,6 +3,14 @@ body{
     font-weight: 300;
     margin: 0;
 }
+textarea {
+    font-weight: 300;
+    margin: 0;
+} 
+
+#message {
+    margin:0;
+}
 
 /* Header & Nav bar */
 
