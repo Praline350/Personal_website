@@ -8,6 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DEBUG=0
 
+
 # Copie du projet
 COPY . /app
 
@@ -25,8 +26,8 @@ RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
 
 # Utilisation de la variable SECRET_KEY depuis l'environnement
-ARG DJANGO_SECRET_KEY
-ENV DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+ARG SECRET_KEY
+ENV SECRET_KEY=${SECRET_KEY} 
 
 # Commande de lancement
 CMD ["gunicorn", "project.wsgi:application", "--bind", "0.0.0.0:8000"]
