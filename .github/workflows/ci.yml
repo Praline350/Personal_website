@@ -39,7 +39,7 @@ jobs:
         run: |
           docker push edwin350/website:latest
 
-      # Deploy to Render
+      # deploy
       # - name: Deploy to Render
       #   env:
       #     RENDER_WEBHOOK: ${{ secrets.RENDER_DEPLOY_WEBHOOK }}
