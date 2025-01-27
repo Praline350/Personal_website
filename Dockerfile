@@ -7,7 +7,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DEBUG=0
-
+ENV PORT=8000
 
 # Copie du projet
 COPY . /app
@@ -30,4 +30,4 @@ ARG SECRET_KEY
 ENV SECRET_KEY=${SECRET_KEY} 
 
 # Commande de lancement
-CMD ["gunicorn", "project.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "gunicorn project.wsgi:application --bind 0.0.0.0:${PORT}"]
