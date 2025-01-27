@@ -25,10 +25,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
+      - name: ENV
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      
       # Build Docker images
       - name: Build Docker images
         run: |
-          docker buildx build-arg DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -t edwin350/website:latest -f Dockerfile . --progress=plain
+          docker buildx build -t edwin350/website:latest -f Dockerfile . --progress=plain
 
       # Docker Hub login
       - name: Log in to Docker Hub
